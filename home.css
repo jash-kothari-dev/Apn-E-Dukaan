@@ -29,10 +29,10 @@ h1{
     flex-wrap: wrap;
     background-color: #2d3436;
 }
-.nav{
+nav{
     background-color: #2d3436;
 }
-a{
+nav a{
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 550;
@@ -337,6 +337,7 @@ main{
     background-color: #1E272E;
     color: #BDC3C7;
     font-weight: 500;
+    text-decoration: none;
 }
 .footer-inner li{
     list-style: none;
