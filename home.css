@@ -91,7 +91,7 @@ main{
 .hero-image{
     height: 55vh;
     width: 90vw;
-    background-color: aqua;
+    background-image: url('/F79\ \(1\).jpg');
     border-radius: 10px;
 }
 
@@ -187,7 +187,6 @@ main{
 .category{
     height: 26.5vh;
     width: 16.5vw;
-    background-image: url("/F1.jpeg");
     background-size: cover;
 }
 
