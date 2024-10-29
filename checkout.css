@@ -1,0 +1,221 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    background-color: #FDFDFD;
+}
+
+/* navbar */
+.navbar {
+    height: 62px;
+    width: 100vw;
+    border-bottom: 2.2px solid #75B5E0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    background-color: #2d3436;
+    color: #FFFFFF;
+}
+h1{
+    font-size: 1.6em;
+    font-weight: 800;
+    background-color: #2d3436;
+}
+.nav-options{
+    padding: 0px 15px;
+    flex-wrap: wrap;
+    background-color: #2d3436;
+}
+nav{
+    background-color: #2d3436;
+}
+nav a{
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 550;
+    margin-left: 50px;
+    color: #FFFFFF; 
+    background-color: #2d3436;
+}
+.nav-search{
+    display: flex;
+    align-items: center;
+    background-color: #2d3436;
+}
+.nav-search input{
+    font-weight: 600;
+    font-size: 1em;
+    height: 32px;
+    width: 350px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    padding: 0px 0px 0px 5px;
+}
+.search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 25px;
+    padding: 0 5px 0 5px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #ff9900;
+}
+.cart{
+    margin-left: 25px;
+    color: #FFFFFF;
+    height: 32px;
+    width: 26px;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+}
+
+/* main */
+.outer-box{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 85px 0px 0px 0px;
+}
+.left-box{
+    background-color: #FFFFFF;
+    color: #2c3e50;
+    border: 3px solid #D6DEE4;
+    border-radius: 10px;
+    height: 95vh;
+    width: 30vw;
+    padding: 20px 20px 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.left-box h3{
+    font-size: 1.95rem;
+    margin: 0px 0px 25px 14px;
+    align-self: flex-start;
+}
+.left-box h6{
+    font-size: 0.90rem;
+    margin: 0px 0px 7px 0px;
+    font-weight: 600;
+}
+.left-box input{
+    padding: 1px 2px 1px 5px;
+    height: 4vh;
+    width: 27vw;
+    margin: 0px 0px 18px 0px;
+    border-radius: 4px;
+    border:2px solid #D6DEE4;
+    background-color: #f2f4f6;
+}
+.save-information h6{
+    font-size: 0.95rem;
+}
+.save-information input{
+    height: 3vh;
+    width: 1.90vw;
+    display: inline-block;
+}
+.save-information label{
+    display: inline-block;
+    padding: 0px 0px 10px 5px;
+}
+.save-information {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 0px 0px 0px 0px;
+}
+.right-box{
+    height: 90vh;
+    width: 45vw;
+    background-color: #FFFFFF;
+    color: #2c3e50;
+    border: 3px solid #D6DEE4;
+    border-radius: 10px;
+}
+
+
+/* footer */
+.footer-outer{
+    background-color: #1E272E;
+    color: #BDC3C7;
+    /* position: relative;
+    bottom: 0px; */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.footer-inner{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 10px 40px 10px;
+}
+.footer-1 h1{
+    font-size: 1.6em;
+    padding-bottom: 25px;
+    background-color: #1E272E;
+    font-weight: 600;
+}
+.footer-1 h6{
+    font-size: 1.3em;
+    padding-bottom: 25px;
+    font-weight: 550;
+}
+.footer-1 p{
+    padding-bottom: 20px;
+    font-size: 1em;
+    font-weight: 400;
+}
+.footer-1 input{
+    border-radius: 3px;
+    height: 10%;
+    width: 70%;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 20px 0px;
+    font-weight: 550;
+}
+.footer-inner h3{
+    font-size: 1.2em;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+.footer-inner a{
+    margin-left: 0px;
+    background-color: #1E272E;
+    color: #BDC3C7;
+    font-weight: 500;
+    text-decoration: none;
+}
+.footer-inner li{
+    list-style: none;
+    padding-bottom: 15px;
+}
+.footer-4 i{
+    font-size: 1.8em;
+    margin-right: 10px;    
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+.copyright p{
+    padding-left: 3px;
+}
