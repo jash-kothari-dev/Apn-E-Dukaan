@@ -37,7 +37,7 @@
 
   <main>
     <div class="hero-section">
-      <div class="hero-image"></div>
+    <div class="hero-image" style="background-image: url('/F79.2.jpg')"></div>
     </div>
 
     <div class="Flash">
