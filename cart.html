@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .cart-container {
+            padding: 20px;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .cart-table th, .cart-table td {
+            text-align: left;
+            padding: 10px;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .checkout-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            background-color: #218838;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-controls input {
+            width: 40px;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .quantity-controls button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quantity-controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Apn-E-Dukaan</h1>
+            </div>
+            <div class="nav-options">
+                <nav>
+                    <a href="/index.html"><u>Home</u></a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/about.html">About</a>
+                    <a href="/cart.html">Cart</a>
+                </nav>
+            </div>
+            <div class="nav-search">
+                <input type="search" placeholder="  Search here" class="search-bar" />
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <a href="cart.html" class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <h1>Your Cart</h1>
+
+            <!-- Cart Table -->
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price (₹)</th>
+                        <th>Total (₹)</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <tr>
+                        <td>Product 1</td>
+                        <td>
+                            <div class="quantity-controls">
+                                <button onclick="updateQuantity('product1', -1)">-</button>
+                                <input type ="number" id="product1" value="1" min="1" onchange="updateCart()">
+                                <button onclick="updateQuantity('product1', 1)">+</button>
+                            </div>
+                        </td>
+                        <td id="product1-price">₹500.00</td>
+                        <td id="product1-total">₹500.00</td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>
+                            <div class="quantity-controls">
+                                <button onclick="updateQuantity('product2', -1)">-</button>
+                                <input type="number" id="product2" value="2" min="1" onchange="updateCart()">
+                                <button onclick="updateQuantity('product2', 1)">+</button>
+                            </div>
+                        </td>
+                        <td id="product2-price">₹300.00</td>
+                        <td id="product2-total">₹600.00</td>
+                    </tr>
+                    <tr>
+                        <td>Product 3</td>
+                        <td>
+                            <div class="quantity-controls">
+                                <button onclick="updateQuantity('product3', -1)">-</button>
+                                <input type="number" id="product3" value="1" min="1" onchange="updateCart()">
+                                <button onclick="updateQuantity('product3', 1)">+</button>
+                            </div>
+                        </td>
+                        <td id="product3-price">₹150.00</td>
+                        <td id="product3-total">₹150.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h3>Cart Summary</h3>
+                <p>Subtotal: <strong id="subtotal">₹1,250.00</strong></p>
+                <p>Shipping: <strong>₹50.00</strong></p>
+                <p>Total: <strong id="total">₹1,300.00</strong></p>
+            </div>
+
+            <a href="/checkout.html">
+                <button class="checkout-button">Proceed to Checkout</button>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <script>
+        let cartItems = document.getElementById('cart-items');
+        let subtotalElement = document.getElementById('subtotal');
+        let totalElement = document.getElementById('total');
+
+        function updateQuantity(productId, quantityChange) {
+            let quantityInput = document.getElementById(productId);
+            let currentQuantity = parseInt(quantityInput.value);
+            let newQuantity = currentQuantity + quantityChange;
+
+            if (newQuantity >= 1) {
+                quantityInput.value = newQuantity;
+                updateCart();
+            }
+        }
+
+        function updateCart() {
+            let cartItemsArray = Array.from(cartItems.children);
+            let subtotal = 0;
+
+            cartItemsArray.forEach((item) => {
+                let quantity = parseInt(item.children[1].children[1].value);
+                let priceElement = item.children[2];
+                let price = parseFloat(priceElement.textContent.replace('₹', ''));
+                let total = quantity * price;
+                item.children[3].textContent = `₹${total.toFixed(2)}`;
+                subtotal += total;
+            });
+
+            subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
+            totalElement.textContent = `₹${(subtotal + 50).toFixed(2)}`;
+        }
+
+        updateCart(); // Initialize cart on page load
+    </script>
+</body>
+
+</html>
