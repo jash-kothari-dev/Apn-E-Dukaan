@@ -92,7 +92,11 @@ mysqli_close($conn);
                     <h6>Password</h6>
                 </label>
                 <input type="password" name="password" id="password" required>
-                <div class="continue"><button type="submit">Continue</button></div>
+                <div class="continue">
+                         <a href="index.html">
+                            <button type="button">Continue</button>
+                        </a>
+                </div>
             </form>
             <?php if (isset($error_message)): ?>
                 <p style="color: red;"><?php echo $error_message; ?></p>
